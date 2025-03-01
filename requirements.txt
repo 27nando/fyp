@@ -2,3 +2,10 @@ youtube-dl==2021.12.17
 youtube-transcript-api==0.6.1
 pandas==2.1.1
 python-dotenv==1.0.0
+textblob==0.17.1
+transformers==4.37.2
+scikit-learn==1.4.0
+spacy==3.7.2
+matplotlib==3.8.2
+seaborn==0.13.2
+torch==2.2.0
