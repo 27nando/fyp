@@ -1,0 +1,4 @@
+youtube-dl==2021.12.17
+youtube-transcript-api==0.6.1
+pandas==2.1.1
+python-dotenv==1.0.0
