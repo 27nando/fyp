@@ -9,3 +9,6 @@ spacy==3.7.2
 matplotlib==3.8.2
 seaborn==0.13.2
 torch==2.2.0
+webvtt-py==0.4.6
+SpeechRecognition==3.10.1
+google-api-python-client==2.116.0
