@@ -334,8 +334,11 @@ class BiasAnalyzer:
         print(f"- Emotional content: {cluster_char['emotional_content']:.3f}")
 
 def main():
-    # Initialize analyzer with your CSV file
-    analyzer = BiasAnalyzer('news_transcripts_20250301_163102.csv')
+    # Use the latest combined dataset from speech crawler
+    data_file = 'data/all_channels_20250311_151308.csv'
+    
+    print(f"Running bias analysis on {data_file}...")
+    analyzer = BiasAnalyzer(data_file)
     
     # Run analysis pipeline
     analyzer.analyze_sentiment()
