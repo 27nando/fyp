@@ -22,17 +22,47 @@ nlp = spacy.load('en_core_web_sm')
 # Load pre-defined bias-indicating words
 LOADED_WORDS = {
     'positive': [
-        'freedom', 'patriot', 'traditional', 'faith', 'strong', 'proud',
-        'sovereign', 'protection', 'values', 'heritage'
-    ],
+    # Political and social values
+    'freedom', 'patriot', 'traditional', 'faith', 'strong', 'proud',
+    'sovereign', 'protection', 'values', 'heritage', 'democracy', 'justice',
+    'unity', 'leadership', 'success', 'progress', 'reform', 'prosperity',
+    'security', 'peace', 'victory', 'achievement', 'excellence', 'freedom', 
+    # Economic terms
+    'growth', 'recovery', 'boost', 'flourishing', 'thriving', 'robust',
+    'stable', 'profitable', 'sustainable', 'innovative', 'efficient', 'profit',
+    # Social impact
+    'community', 'family', 'equality', 'diversity', 'inclusive', 'empowerment',
+    'opportunity', 'advancement', 'breakthrough', 'transformation', 'innovation'
+],
     'negative': [
-        'radical', 'socialist', 'communist', 'threat', 'dangerous', 'corrupt',
-        'invasion', 'chaos', 'crisis', 'disaster'
-    ],
+    # Political criticism
+    'radical', 'socialist', 'communist', 'threat', 'dangerous', 'corrupt',
+    'invasion', 'chaos', 'crisis', 'disaster', 'extremist', 'authoritarian',
+    'tyranny', 'propaganda', 'conspiracy', 'scandal', 'controversy',
+    'incompetent', 'failed', 'mismanaged', 'illegitimate',
+    # Economic concerns
+    'recession', 'inflation', 'crash', 'deficit', 'bankruptcy', 'collapse',
+    'burden', 'wasteful', 'devastating', 'costly', 'unstable',
+    # Social issues
+    'violence', 'crime', 'terrorism', 'discrimination', 'exploitation',
+    'oppression', 'inequality', 'poverty', 'conflict', 'crisis'
+],
     'emotional': [
-        'outrage', 'shocking', 'devastating', 'alarming', 'horrific',
-        'terrifying', 'tragic', 'dramatic', 'explosive', 'scandal'
-    ]
+    # Negative emotions
+    'outrage', 'shocking', 'devastating', 'alarming', 'horrific',
+    'terrifying', 'tragic', 'dramatic', 'explosive', 'scandal',
+    'catastrophic', 'disastrous', 'nightmare', 'horrendous', 'appalling',
+    'disgraceful', 'shameful', 'despicable', 'atrocious',
+    # Urgency and intensity
+    'breaking', 'exclusive', 'urgent', 'critical', 'crucial',
+    'unprecedented', 'massive', 'extreme', 'intense', 'emergency',
+    # Fear and anxiety
+    'dangerous', 'threatening', 'menacing', 'sinister', 'dire',
+    'perilous', 'destructive', 'deadly', 'fatal', 'devastating',
+    # Positive intensity
+    'extraordinary', 'remarkable', 'spectacular', 'phenomenal',
+    'incredible', 'amazing', 'brilliant', 'outstanding', 'magnificent'
+]
 }
 
 class BiasAnalyzer:

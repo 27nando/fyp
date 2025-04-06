@@ -1,0 +1,33 @@
+%%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '24px', 'fontFamily': 'arial', 'nodeSpacing': 60, 'rankSpacing': 60, 'labelHeight': 36 }}}%%
+graph TD
+
+%% Style definitions
+classDef default font-size:20px,font-family:arial,fill:#f9f9f9,stroke:#333,stroke-width:2px;
+classDef subgraphStyle fill:#e1f5fe,stroke:#01579b,stroke-width:2px,font-size:22px;
+    subgraph Data Collection
+        A[YouTube Crawler] -->|International News| B[Raw Transcripts]
+        C[Speech Crawler] -->|US Political News| B
+        C -->|Uses| D[SubtitleProcessor]
+        D -->|Clean & Filter| E[Processed Transcripts]
+    end
+
+    subgraph Bias Analysis
+        E -->|Input| F[BiasAnalyzer]
+        F -->|1| G[Sentiment Analysis]
+        F -->|2| H[Loaded Language Detection]
+        F -->|3| I[Topic Modeling]
+        F -->|4| J[POS Pattern Analysis]
+        F -->|5| K[Frequency Pattern Analysis]
+        F -->|6| L[Bias Pattern Clustering]
+    end
+
+    subgraph Visualization & Reporting
+        G & H & I & J & K & L -->|Data| M[Generate Visualizations]
+        M -->|1| N[Sentiment Distribution]
+        M -->|2| O[Loaded Language Usage]
+        M -->|3| P[POS Patterns]
+        M -->|4| Q[Bias Word Frequency]
+        M -->|5| R[Bias Pattern Clusters]
+        M -->|6| S[Bias Word Variety]
+        N & O & P & Q & R & S -->|Combine| T[Final Report]
+    end
