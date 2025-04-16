@@ -1,0 +1,42 @@
+graph TD
+    A[Start] --> B[Initialize SpeechCrawler]
+    B --> C[Verify YouTube API Key]
+    
+    C -->|Valid| D[Start Channel Crawling]
+    C -->|Invalid| E[Display API Error]
+    E --> Z[End]
+    
+    D --> F[Get Channel Videos]
+    F --> G{For Each Video}
+    
+    G --> H[Check Video Duration]
+    H -->|Valid Duration| I[Get Video Transcript]
+    H -->|Invalid Duration| G
+    
+    I --> J[Try Manual Captions]
+    J -->|Success| K[Validate Entries]
+    J -->|Fail| L[Try Auto Captions]
+    
+    L -->|Success| K
+    L -->|Fail| G
+    
+    K --> M[Process Subtitles]
+    M --> N[Clean & Filter Text]
+    N --> O[Analyze Speech Patterns]
+    
+    O --> G
+    G -->|All Videos Done| P[Save Processed Data]
+    P --> Z
+    
+    subgraph "Subtitle Processing"
+    N --> N1[Remove HTML/XML Tags]
+    N1 --> N2[Remove Noise Markers]
+    N2 --> N3[Normalize Text]
+    N3 --> N4[Validate Content]
+    end
+    
+    subgraph "Speech Pattern Analysis"
+    O --> O1[Calculate Metrics]
+    O1 --> O2[Detect Patterns]
+    O2 --> O3[Generate Statistics]
+    end

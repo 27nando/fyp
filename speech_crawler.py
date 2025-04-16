@@ -58,7 +58,15 @@ NEWS_CHANNELS = {
     
     # Extreme partisan sources
     'The Daily Wire': 'UCaeO5vkdj5xOQHp4UmIN6dw', # Strong conservative bias
-    'BlazeTV': 'UCWA6ZkxA1jz9sN5TxPO9E5g'        # Strong conservative commentary
+    'BlazeTV': 'UCWA6ZkxA1jz9sN5TxPO9E5g',        # Strong conservative commentary
+
+    # International Sources
+    'VOA News': 'UCVSNOxehfALut52NbkfRBaA',    # Voice of America - clear English
+    'DW News': 'UCknLrEdhRCp1aegoMqRaCZg',      # Deutsche Welle - English service
+    'Global News': 'UChLtXXpo4Ge1ReTEboVvTDg',   # Canadian news
+    'FRANCE 24 English': 'UCQfwfsi5VrQ8yKZ-UWmAEFg',  # International news
+    'Al Jazeera English': 'UCNye-wNBqNL5ZzHSJj3l8Bg'  # High quality production
+
 }
 
 class SubtitleProcessor:
@@ -566,7 +574,7 @@ class SpeechCrawler:
             print(f"Error checking subtitles for video {video_id}: {str(e)}")
             return False
 
-    def get_channel_videos(self, channel_id: str, max_results: int = 100) -> pd.DataFrame:
+    def get_channel_videos(self, channel_id: str, max_results: int = 150) -> pd.DataFrame:
         """Get videos from a specific channel with enhanced metadata, rate limiting, and exponential backoff"""
         def exponential_backoff(retry_count: int, base_delay: float = 1.0, max_delay: float = 32.0) -> float:
             """Calculate delay with exponential backoff"""
